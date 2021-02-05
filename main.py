@@ -33,5 +33,3 @@ def results():
      prediction = prediction)
 
 
-
-app.run("localhost", "9999", debug=True)
