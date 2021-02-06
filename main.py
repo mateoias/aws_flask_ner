@@ -7,7 +7,7 @@ from spacy import displacy
 nlp = spacy.load("en_core_web_md")
 from flask import Flask, render_template, request
 
-app = Flask('flask_ner')
+app = Flask(__name__)
 
 @app.route('/')
 def show_user_input_form():
@@ -32,4 +32,7 @@ def results():
     return render_template('resultsform.html', data = data,
      prediction = prediction)
 
+
+if __name__ == "__main__":
+    app.run()
 
