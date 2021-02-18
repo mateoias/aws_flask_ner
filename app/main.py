@@ -4,8 +4,8 @@
 # pip install spacy
 import spacy
 from spacy import displacy
-nlp = spacy.load("en_core_web_trf")
-# nlp = spacy.load("en_core_web_md")
+# nlp = spacy.load("en_core_web_trf") too big for heroku
+nlp = spacy.load("en_core_web_md")
 
 from flask import Flask, render_template, request
 
