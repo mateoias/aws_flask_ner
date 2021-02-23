@@ -4,7 +4,6 @@
 # pip install spacy
 import spacy
 from spacy import displacy
-# nlp = spacy.load("en_core_web_trf") too big for heroku
 nlp = spacy.load("en_core_web_md")
 
 from flask import Flask, render_template, request
@@ -13,7 +12,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def show_user_input_form():
-    return render_template('predictorform.html')
+  return render_template('predictorform.html')
 
 @app.route('/results', methods=['POST'])
 def results():
@@ -23,18 +22,22 @@ def results():
       data = request.form['data']
       doc = nlp(data)
       prediction = []
+      words = []
       ent_to_keep = ["PERSON", "NORP", "FAC", "ORG", "GPE", "LOC", "PRODUCT",
        "EVENT", "WORK_OF_ART", "LANGUAGE", "MONEY", "LAW"]
       for ent in doc.ents: 
           entity = (ent.text, ent.label_)
           if ent.label_ in ent_to_keep:
-            prediction.append(entity) 
-      if len(prediction) == 0:
-        prediction ="There were no recognizable entities"       
+            prediction.append(entity)
+      html = displacy.serve(doc, style="ent", page = True)
+      html = html.replace("\n\n", "\n")
+	# 	st.write(HTML_WRAPPER.format(html), unsafe_allow_html=True)
+	# label_explainer()
+ 
     return render_template('resultsform.html', data = data,
-     prediction = prediction)
+     prediction = html)
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug = True)
 

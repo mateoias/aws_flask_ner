@@ -2,6 +2,4 @@ spacy==3.0.0
 Flask==1.1.2
 en-core-web-md @ https://github.com/explosion/spacy-models/releases/download/en_core_web_md-3.0.0/en_core_web_md-3.0.0.tar.gz#egg=en_core_web_md
 # en-core-web-trf @ https://github.com/explosion/spacy-models/releases/download/en_core_web_trf-3.0.0/en_core_web_trf-3.0.0.tar.gz#egg=en_core_web_trf  to big for heroku
-
-Flask==1.1.2
 gunicorn==20.0.4
