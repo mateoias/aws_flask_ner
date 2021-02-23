@@ -29,13 +29,9 @@ def results():
           entity = (ent.text, ent.label_)
           if ent.label_ in ent_to_keep:
             prediction.append(entity)
-      html = displacy.serve(doc, style="ent", page = True)
-      html = html.replace("\n\n", "\n")
-	# 	st.write(HTML_WRAPPER.format(html), unsafe_allow_html=True)
-	# label_explainer()
  
     return render_template('resultsform.html', data = data,
-     prediction = html)
+     prediction = prediction)
 
 
 if __name__ == "__main__":
