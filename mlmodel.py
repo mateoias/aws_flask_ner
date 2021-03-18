@@ -7,14 +7,12 @@ from spacy import displacy
 nlp = spacy.load("en_core_web_trf")
 zh_nlp = spacy.load("zh_core_web_trf")
 from flask import Flask, render_template, request, jsonify
-
+from chinese_dictionary import add_pinyin
 app = Flask(__name__)
 
 @app.route('/')
 def show_user_input_form():
-#   if request.method == 'POST':
-  	return render_template('predictorform.html')
-# @app.route('choose_language')
+	return render_template('predictorform.html')
 
 
 @app.route('/results', methods=['POST'])
@@ -33,9 +31,12 @@ def results():
       ent_to_keep = ["PERSON", "NORP", "FAC", "ORG", "GPE", "LOC", "PRODUCT",
        "EVENT", "WORK_OF_ART", "LANGUAGE", "MONEY", "LAW"]
       for ent in doc.ents: 
-          entity = (ent.text, ent.label_)
+          entity = (ent.label_, ent.text)
           if ent.label_ in ent_to_keep:
             prediction.append(entity)
+            if language == "Chinese":
+              pronunciation = add_pinyin.add_pinyin(ent.text)
+              prediction.append(pronunciation)
     # return jsonify(data=data, prediction= prediction)
     return render_template('resultsform.html', data = data,
      prediction = prediction)
