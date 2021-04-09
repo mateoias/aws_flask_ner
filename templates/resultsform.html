@@ -5,12 +5,14 @@
 <meta charset="UTF-8" />
  </head>
  <body>
- 
-
+   <h2> A more attractive user interface is in the works :)</h2>
  <h3>Original Text</h3>
- <div> {{ data }}.</div>
- <h3> Named Entities</h3>{{ prediction }}
-   <h3> Thanks for Trying out the NER tagger!</h3>
+<div> {{ data }}.</div>
+  <h3> Pretty Display</h3> {{html | safe}}
+  <h3> Labels</h3> {{labels}}
+  <h3> Named Entities</h3>{{ prediction }}
+ 
+ <h3> Thanks for trying out the NER tagger!</h3>
    <p></p>
    <p></p> 
    <h3> Would you like to go again?</h3>

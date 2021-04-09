@@ -4,10 +4,10 @@
 <head/>
 
    <body>
-      <h1> Welcome to the ner_for_esl project</h1>
-      <h2> Use the field below to input the language text</h2>
-      <h2> The app will help you to identify proper nouns that are not regular English content words</h2>
-      <h2> Use the button to choose a language</h2>
+      <h1> Welcome to the ner_for_language_learning project</h1>
+      <h2> Use the field below to input the language text in English or traditional Chinese</h2>
+      <h2> The app will help you to identify proper nouns that are not regular vocabulary words</h2>
+      <h2> Check a box to choose your language</h2>
       <div>
          <form action="/results" method="POST">
          Choose just one language:
@@ -17,7 +17,7 @@
          <input type="checkbox" id="Chinese" name="language" value="Chinese">
          <label for="Chinese"> Chinese</label><br>
          <br><br>   
-      <textarea placeholder = "Input text here" rows="10" cols="80" name="data"></textarea>
+      <textarea placeholder = "Input text here. Don't forget to choose a language!" rows="10" cols="80" name="data"></textarea>
       <br>
    <input type="submit" value="submit" />
    
