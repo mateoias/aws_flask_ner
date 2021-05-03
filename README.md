@@ -1,11 +1,9 @@
 # ner_for_esl
 ## A quick summary of the API
 This API grew out of (one of) my frustrations as a chinese student. When I read the newspaper, I know most of the important characters, but I often don't know proper nouns, such as peoples' names, cities, company names, and so on. Thus I often get lost in the text. At the same time, I see that my ESL students have the same struggle in English. This API is designed to help language learners resolve the problem of unknown vocabulary, especially in terms of proper nouns (see detailed motivation below).
-## currently under revision
-You can see a demo of the functionality of the API, hosted as an EC2 instance AWS without a nice user interface, at:
-http://54.244.107.106/
-## currently under revision
-Just input English text and it will identify proper nouns (named entities) for you. The user interface will be coming soon :)
+You can see a demo of the functionality of the API, hosted as an EC2 instance on AWS without a nice user interface, at:
+http://44.241.102.79
+Just input English or Chinese text and it will identify proper nouns (named entities) for you. The user interface will be coming soon :)
 
 ## Further background on the ner_for_esl project
 for more information, you can also see my article at https://chatbotslife.com/practical-nlp-for-language-learning-9b3a259fe7b5?sk=9a00138f2189baac2f9d3d4b2e81b955
@@ -33,17 +31,18 @@ The purpose of this repo is to help students by identifying and highlighting  tr
 * ??? 
 
 Using a large off the shelf, English NER model from Spacy we can get about 90% accuracy in finding the following items, and we are working on improving the accuracy and the user interface of both models.
-* PERSON     	 	People, including fictional.
-* NORP      		Nationalities or religious or political groups.
+
+* EVENT		Named hurricanes, battles, wars, sports events, etc
 * FAC			Buildings, airports, highways, bridges, etc.
-* ORG			Companies, agencies, institutions, etc.
 * GPE			Countries, cities, states.
-* LOC:			Non-GPE locations, mountain ranges, bodies of water.
-* PRODUCT		Objects, vehicles, foods, etc. (Not services.)
-* EVENT		Named hurricanes, battles, wars, sports events, etc.
-* WORK_OF_ART	Titles of books, songs, etc.
-* LAW			Named documents made into laws.
 * LANGUAGE		Any named language.
+* LAW			Named documents made into laws.
+* LOC			Non-GPE locations, mountain ranges, bodies of water.
 * MONEY		Monetary values, including unit.
+* NORP      		Nationalities or religious or political groups.
+* PERSON     	 	People, including fictional.
+* PRODUCT		Objects, vehicles, foods, etc. (Not services).
+* ORG			Companies, agencies, institutions, etc.
+* WORK_OF_ART	Titles of books, songs, etc.
 
 This is a work in progress, so if you have any suggestions or comments, please contact me at mateoias@hotmail.com 
