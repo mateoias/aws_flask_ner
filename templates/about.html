@@ -26,7 +26,7 @@
                         <a class="dropdown-item" href="/about" target="blank_">about this project</a>
                         <a class="dropdown-item"
                             href="https://chatbotslife.com/practical-nlp-for-language-learning-9b3a259fe7b5"
-                            target="blank_">medium article</a>
+                            target="blank_">Why NER?</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="https://github.com/mateoias/flask_ner" target="blank_">Github source
@@ -36,6 +36,7 @@
         </ul>
         </div>
     </nav>
+
     <div class="p-3 mb-2 bg-dark text-white">  
         <div class="container mb-2 mt-4">
 <h2> A quick summary of the API</h2>
@@ -44,35 +45,20 @@
 When I read the newspaper, I know most of the important characters, 
 but I often don't know proper nouns, such as peoples' names, 
 cities, company names, and so on. Thus I often get lost in the text. 
-At the same time, I see that my ESL students have the same struggle in English. 
+At the same time, I see that my ESL students have the same struggle in English.
+<br> 
 This API is designed to help language learners resolve the problem of unknown vocabulary, 
-especially in terms of proper nouns (see detailed motivation below). 
-This demo of the functionality of the API, is hosted as an EC2 instance on AWS 
-without a nice user interface.
+especially in terms of proper nouns (see a more detailed motivation in "further information => "Why NER?"
+).This demo of the functionality of the API is hosted as an EC2 instance on AWS 
+using Flask.
+<br> 
 Just input English or Chinese text and it will identify proper nouns
-(named entities) for you. The user interface will be coming soon :)
+(named entities) for you. As an added bonus, it will give you the pronunciation 
+of the Chinese characters in roma pinyin. Please enjoy, and if you have any comments, contact me at
+mateoias@hotmail.com
 
 </h5>
-
-        <!--Grid row-->
-        <div class="row">
-
-            <!--Grid column-->
-            <div class="col-md-6">
-
-
-                <img src="keyboard.jpeg" class="img-fluid" alt="book cover" width="200" height="200">
-                    <br>
-                    Sometimes it feels like language teaching isn't keeping up with technology
-                    <br>
-                    image courtesy of Amir Tavas on <a href=" https://unsplash.com/photos/Aa7yTcxIKnk?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink">Unsplash</a>
-                   
-            </div>
-            <!-- <div class="col-md-6">
-                <img src="OZ_plots/wizard_of_Oz_Cover.jpg" class="img-fluid mb-2" alt="book cover">
-            </div> -->
-        </div>
-    </div>
+    </div> 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>

@@ -18,21 +18,32 @@ def create_dicts():
 def add_pinyin(predictions):
     # prepare Cedict (Chinese dictionary) parser
     traditional = create_dicts()
+    chinese_entities = []
+    multi_character = []
+    prediction_list = []
     character_data = []
     pinyin_data = []
     #loop through dictionary and get pin yin for eaxch character
     for prediction in predictions:
+        entity_type = prediction[0]
         characters = prediction[1]
         for character in characters:
             try:
                 character_pinyin = traditional[character]
-                character_data.append((character, character_pinyin))
+                # character_data.append((character, character_pinyin))
+                pronunciation = character + character_pinyin
             except: 
-                character_data.append((character, "XX"))
-        pinyin_data.append(character_data)
-        character_data = []
+                # character_data.append((character, "XX"))
+                pronunciation = character
+            multi_character.append(pronunciation)
+        prediction_list.append(multi_character)
+        multi_character = []
+        prediction = (entity_type, prediction_list)
+        prediction_list = []
+        # pinyin_data.append(character_data)
+        chinese_entities.append(prediction)
             
-    return pinyin_data
+    return chinese_entities
  # for e in entries:
     # print(e) 
     # 龟缩 (龜縮) - gui1 suo1
