@@ -4,7 +4,7 @@ This API grew out of (one of) my frustrations as a chinese student. When I read 
 I originally hosted the API as an EC2 instance on AWS, however it was limited to 12 months of free tier usage so I have terminated the instance.
 
 ## Further background on the ner_for_esl project
-for more information, you can also see my article at https://chatbotslife.com/practical-nlp-for-language-learning-9b3a259fe7b5?sk=9a00138f2189baac2f9d3d4b2e81b955
+For more information, you can also see my article at https://chatbotslife.com/practical-nlp-for-language-learning-9b3a259fe7b5?sk=9a00138f2189baac2f9d3d4b2e81b955
 
 English Learning and the Wheel of Fortune Corpus
 
@@ -16,7 +16,7 @@ How many words do you need to know in order to be able to speak a language? It�
 * 170,000 vocabulary items in current use 
 * 1,000,000: the approximate number of existent English vocabulary items, mostly obsolete
 
-Anecdotally, a lot of ESL students are in the 1000-4000 word range, which should be enough for them to get by in life, but they often get stuck on 'easy' texts, even though they know most of the basic words. One reason for this is plain old proper nouns that don’t make sense if you just studied in English class (“Best Buy”, “Eliza”). I prefer the linguist Ray Jackendoff’s explanation of  this phenomena as the  “Wheel of Fortune” corpus; it means that if you show a native speaker a phrase like
+Anecdotally, a lot of ESL students are in the 1000-4000 word range, which should be enough for them to get by in life, but they often get stuck on 'easy' texts, even though they know most of the basic words. One reason for this is plain old proper nouns that don’t make sense if you just studied in English class (e.g. “Best Buy”, “Eliza”). I prefer the linguist Ray Jackendoff’s explanation of  this phenomena as the  “Wheel of Fortune” corpus; it means that if you show a native speaker a phrase like
    _ _ E A_ _A S T    O F    _ _ A _ _ IONS   
 they can somehow yell out “BREAKFAST OF CHAMPIONS,” but non-native speakers have no chance of doing this or of understanding it after they have seen it. Also, as Jackendorf points out, Wheel of Fortune was on TV forever, but they never ran out of phrases to use.
 
@@ -26,9 +26,8 @@ The purpose of this repo is to help students by identifying and highlighting  tr
 * Place names (cities/states/countries (“Atlanta”) and general (“Lake Meade”)
 * Organizations (“Trader Joe’s”, “House of Representatives”)
 * Titles (“New York Times”, “Men in Black”, “Song of Myself”)
-* ??? 
 
-Using a large off the shelf, English NER model from Spacy we can get about 90% accuracy in finding the following items, and we are working on improving the accuracy and the user interface of both models.
+Using a large off the shelf, English NER model from Spacy we can get about 90% accuracy in finding the above proper nouns. NER works as well for the following items and I am investigating which word types will be the most useful for learners.
 
 * EVENT		Named hurricanes, battles, wars, sports events, etc
 * FAC			Buildings, airports, highways, bridges, etc.
